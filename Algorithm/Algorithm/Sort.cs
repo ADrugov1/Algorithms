@@ -22,10 +22,40 @@ namespace Algorithm
                     }
                 }
                 sortedArray.Add(minimumOfArray);
-                array[flag] = CONST_bigNumber;
+                array[flag] =  CONST_bigNumber;
                 minimumOfArray = CONST_bigNumber; 
             }
             return sortedArray;
+        }
+
+        public List<int> MergeSort(List<int> firstArray, List<int> secondArray)
+        {
+            List<int> mergedArray = new List<int>();
+            var mergedArrayLength = firstArray.Count + secondArray.Count;
+            while (mergedArray.Count != mergedArrayLength)
+            {
+                if (secondArray.Count == 0)
+                {
+                    mergedArray.Add(firstArray[0]);
+                    firstArray.RemoveAt(0);
+                }
+                else if (firstArray.Count == 0)
+                {
+                    mergedArray.Add(secondArray[0]);
+                    secondArray.RemoveAt(0);
+                }
+                else if (secondArray[0] < firstArray[0])
+                {
+                    mergedArray.Add(secondArray[0]);
+                    secondArray.RemoveAt(0);
+                }
+                else
+                {
+                    mergedArray.Add(firstArray[0]);
+                    firstArray.RemoveAt(0);
+                }
+            }
+            return mergedArray;
         }
         public void InitialParams()
         { 

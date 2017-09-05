@@ -7,7 +7,7 @@ namespace Algorithm.Helpers
         public List<int> RandomArray(int arrayLength)
         {
             var array = new List<int>();
-            var rand = new Random();
+            var rand = new Random((int)DateTime.Now.Ticks);
             for (int i = 0; i < arrayLength; i++)
             {
                 array.Add(rand.Next(1000));
