@@ -1,31 +1,27 @@
 ﻿using Algorithm.Helpers;
-using System; 
+using System;
+using Algorithm.Sort;
 
 namespace Algorithm
 {
     public class Program
     {
-        private const int CONST_arrayLength = 10; 
-        static void Main(string[] args)
+        private const int ConstArrayLength = 10;
+
+        private static void Main()
         {
             var randomizer = new Randomizer();
-            var sorter = new Sort();
+            var sorter = new ShakerSort();
             var converter = new Converter();
 
-            var firstUnsortedArray = randomizer.RandomArray(CONST_arrayLength);
-            var secondUnsortedArray = randomizer.RandomArray(0);
+            var firstUnsortedArray = randomizer.RandomArray(ConstArrayLength);
 
-            Console.Write("{0} \n", converter.convertListToString(firstUnsortedArray));
-            Console.Write("{0} \n", converter.convertListToString(secondUnsortedArray));
+            Console.Write("{0} \n", converter.ConvertListToString(firstUnsortedArray));
 
-            var firstSortedArray = sorter.SelectionSort(firstUnsortedArray);
-            var secondSortedArray = sorter.SelectionSort(secondUnsortedArray);
+            var firstSortedArray = sorter.Sort(firstUnsortedArray);
 
-            Console.Write("{0} \n", converter.convertListToString(firstSortedArray));
-            Console.Write("{0} \n", converter.convertListToString(secondSortedArray));
+            Console.Write("{0} \n", converter.ConvertListToString(firstSortedArray));
 
-            var mergeSortedArray = sorter.MergeSort(firstSortedArray, secondSortedArray);
-            Console.Write("{0} \n", converter.convertListToString(mergeSortedArray));
         }
     }
 }

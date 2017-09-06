@@ -3,7 +3,7 @@ namespace Algorithm.Helpers
 {
     public class Converter
     {
-        public string convertListToString(List<int> array)
+        public string ConvertListToString(List<int> array)
         {
             return string.Join(",", array);
         }
