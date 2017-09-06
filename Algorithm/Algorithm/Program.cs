@@ -11,17 +11,18 @@ namespace Algorithm
         private static void Main()
         {
             var randomizer = new Randomizer();
-            var sorter = new ShakerSort();
+            var sorter = new QuickSort();
             var converter = new Converter();
 
             var firstUnsortedArray = randomizer.RandomArray(ConstArrayLength);
 
             Console.Write("{0} \n", converter.ConvertListToString(firstUnsortedArray));
 
-            var firstSortedArray = sorter.Sort(firstUnsortedArray);
+            var firstSortedArray = sorter.Sort(firstUnsortedArray,0,firstUnsortedArray.Count-1);
 
             Console.Write("{0} \n", converter.ConvertListToString(firstSortedArray));
 
-        }
+         }
+
     }
 }

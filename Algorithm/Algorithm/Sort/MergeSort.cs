@@ -6,7 +6,7 @@ namespace Algorithm.Sort
     {
         public List<int> Sort(List<int> firstArray, List<int> secondArray)
         {
-            List<int> mergedArray = new List<int>();
+            var mergedArray = new List<int>();
             var mergedArrayLength = firstArray.Count + secondArray.Count;
             while (mergedArray.Count != mergedArrayLength)
             {
