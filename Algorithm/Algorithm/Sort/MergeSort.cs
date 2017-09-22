@@ -15,12 +15,7 @@ namespace Algorithm.Sort
                     mergedArray.Add(firstArray[0]);
                     firstArray.RemoveAt(0);
                 }
-                else if (firstArray.Count == 0)
-                {
-                    mergedArray.Add(secondArray[0]);
-                    secondArray.RemoveAt(0);
-                }
-                else if (secondArray[0] < firstArray[0])
+                else if (firstArray.Count == 0 || secondArray[0] < firstArray[0])
                 {
                     mergedArray.Add(secondArray[0]);
                     secondArray.RemoveAt(0);
